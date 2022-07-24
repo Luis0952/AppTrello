@@ -77,14 +77,32 @@ const todo_submit = document.getElementById("todo_submit");
 
 todo_submit.addEventListener("click", createTodo);
 
-function createTodo() {
-  const todo_div = document.createElement("div");
-  const input_val = document.getElementById("todo_input").value;
-  const txt = document.createTextNode(input_val);
+  
 
-  todo_div.appendChild(txt);
+function createTodo() {
+  const todo_div = document.createElement("article");
+  //const label_resp=document.createElement("div")
+  const input_val = document.getElementById("todo_input").value;
+  const input_responsable=document.getElementById("input_resp").value;
+  const txt = document.createTextNode(input_val);
+  const txt_responsable=document.createTextNode(input_responsable);
+
+  //crear titulo
+    const Title_task=document.createElement("h3");
+    Title_task.classList.add("title__task");
+    
+  //fin crear titulo
+
+
+  todo_div.append(txt, `\n`, txt_responsable);
+  //Title_task.appendChild(txt_responsable)
+  //label_resp.appendChild(txt_responsable);
   todo_div.classList.add("todo");
   todo_div.setAttribute("draggable", "true");
+  Title_task.classList.add("todo")
+  Title_task.setAttribute("dragabble","true");
+  // label_resp.classList.add("todo")
+  // label_resp.setAttribute("draggable","true");
 
   /* create span */
   const span = document.createElement("span");
@@ -105,6 +123,7 @@ function createTodo() {
   todo_div.addEventListener("dragend", dragEnd);
 
   document.getElementById("todo_input").value = "";
+  document.getElementById("input_resp").value="";
   todo_form.classList.remove("active");
   overlay.classList.remove("active");
 }

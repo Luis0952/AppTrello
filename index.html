@@ -15,7 +15,9 @@
             <button class="btn close-modal">&times;</button>
         </div>
         <div class="body">
-            <input type="text" id="todo_input">
+            <label id="Ad_tarea">Describa la tarea</label><input type="text" id="todo_input">
+            <label id="Ad_responsable">Responsable</label><input type="text" id="input_resp">
+            <input type="date" name="Fecha Tarea" id="Fecha_Tarea">
             <input type="submit" value="Adicionar tarea" id="todo_submit">
         </div>
     </div>
@@ -39,6 +41,22 @@
         <h1>Completada</h1>
     </div>
 </div>
+
+<aside class="aside-app" id="modalNewTask">
+    <div class="l-container">
+      <div class="form-container">
+        <h2 class="aside-form-title">Nueva Tarea</h2>
+        <form class="form-new-task" id="formNewTask">
+          <div class="row-form">
+            <label for="titleTask" class="form-new-task__label">Título:</label>
+          </div>
+        </form>
+    </div>
+</aside>
+
+
+
+
 
 <div id="overlay"></div>
     <script src="./script.js"></script>
