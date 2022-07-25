@@ -1,3 +1,16 @@
+const API_URL = "https://my-json-server.typicode.com/luis0952/AppTrello";
+/**/ 
+axios
+  .get(`${API_URL}/tasks`)//Este tasks es el nombre del objeto en Db.json
+  .then((res)=>showAllTasks(res.data))
+  .catch((err) => console.error(err));
+
+// Filtramos toda la información que recibimos de la API y la mapeamos
+ const showAllTasks = (data) => {
+   data.map((task) => createTodo(task));
+};
+/**/
+
 const todos=document.querySelectorAll(".todo");
 const all_status=document.querySelectorAll(".status")
 let draggableTodo=null; //porque no se sabe que elemento se va a arrastrar
