@@ -1,14 +1,19 @@
 const API_URL = "https://my-json-server.typicode.com/luis0952/AppTrello";
 /**/ 
-axios
-  .get(`${API_URL}/tasks`)//Este tasks es el nombre del objeto en Db.json
-  .then((res)=>showAllTasks(res.data))
-  .catch((err) => console.error(err));
+// state={
+//   datos:[]
+// }
 
-// Filtramos toda la información que recibimos de la API y la mapeamos
- const showAllTasks = (data) => {
-   data.map((task) => createTodo(task));
-};
+// axios
+//   .get(`${API_URL}/tasks`)//Este tasks es el nombre del objeto en Db.json
+//   .then((res)=>showAllTasks(res.data))
+//   this.setState({datos:res})
+//   .catch((err) => console.error(err))
+
+// // Filtramos toda la información que recibimos de la API y la mapeamos
+//  const showAllTasks = (data) => {
+//    data.map((task) => createTodo(task));
+// };
 /**/
 
 const todos=document.querySelectorAll(".todo");
@@ -93,7 +98,7 @@ todo_submit.addEventListener("click", createTodo);
   
 
 function createTodo() {
-  const todo_div = document.createElement("article");
+  const todo_div = document.createElement("div");
   //const label_resp=document.createElement("div")
   const input_val = document.getElementById("todo_input").value;
   const input_responsable=document.getElementById("input_resp").value;
